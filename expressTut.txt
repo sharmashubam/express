@@ -1,0 +1,84 @@
+1.backend framework-- used for creation of apis -- used with other frameworks like angular reactjs
+2.creation of web servers 
+3.Full control of request and responses
+4.No need for learning multiple languages
+
+
+5. request and response in express
+    In the context of the Express web framework for Node.js, a request is an HTTP request received by 
+    the server from a client, and a response is the server's response to that request.
+
+    For example, when a client (such as a web browser) sends an HTTP GET request to the server, 
+    the server will receive the request and process it. The server may then respond with an HTTP 
+    response that includes data, such as HTML content, that the client can display.
+
+
+6.Parsing the data
+    Parsing data refers to the process of taking a data source and breaking it down into a more structured and 
+    usable format. This is often done with the goal of making it easier to extract specific information
+    from the data or to perform certain operations on the data.
+
+    There are many different ways to parse data, depending on the type and format of the data and
+    the specific needs of the person or application doing the parsing. For example, if the 
+    data is in the form of a string of text, it may need to be split into individual words or sentences.
+    If the data is in the form of a table, it may need to be converted into a more 
+    structured format like a CSV (comma-separated values) file or a JSON (JavaScript Object Notation) object.
+
+7.Express has its own router so that we can store in separate files and export
+
+
+8.Express MiddleWare
+
+    In the context of the Express web framework for Node.js, middleware refers to a function 
+    or piece of software that can be inserted into the request-response cycle to perform a specific action.
+
+    Middleware functions in Express are typically used to perform tasks such 
+    as parsing request data, validating data, or adding additional functionality to the request 
+    or response objects. These functions are called "middleware" because they are executed in 
+    the middle of the request-response cycle, between the time that a request is received by 
+    the server and the time that a response is sent back to the client.
+
+    Middleware functions are typically added to an Express application by calling the app.use() method, which 
+    takes the middleware function as an argument. The middleware function can then be executed for each incoming request, allowing 
+    it to perform its intended action before the request is handled by the next function in the chain.
+
+
+
+
+9.
+npm init -y
+sudo dnf install nodejs
+
+
+10. process.env in Express
+In the context of the Express web framework for Node.js, process.env is a global variable that refers to 
+the environment in which the application is running. This variable contains a number of properties that provide 
+information about the environment, such as the operating system, user account, and current working directory.
+
+In Express.js, process.env is commonly used to access environment variables, which are values that can be
+set and accessed by the application at runtime. Environment variables are often used to store sensitive 
+information, such as database credentials or API keys, that should not be included directly in the application code.
+
+To access an environment variable in Express.js, you can use the process.env object and the name of the environment variable.
+For example, if you have an environment variable named DATABASE_URL that contains the URL for your application's database,
+you could access its value using the following code:
+const databaseUrl = process.env.DATABASE_URL;
+
+In addition to accessing environment variables, process.env can also be used to set environment-specific 
+configurations for your Express.js application. For example, you can use the NODE_ENV environment variable 
+to specify whether your application is running in a development, test, or production environment. This can be useful for enabling 
+or disabling certain features or settings based on the environment in which the application is running.
+
+11. install nodemon so that we dont have to restart the server again and again  ----npm i -D nodemon
+    --> change the script of the package.json file as below-->
+    "scripts": {
+    "start": "node index",
+    "dev" :   "nodemon index"
+    }
+
+    then command in terminal-->npm run dev
+
+12. path module in express
+
+    ----->Loading an HTML file
+    res.sendFile(path.join(__dirname,public,index.html))
